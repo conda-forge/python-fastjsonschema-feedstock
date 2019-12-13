@@ -8,7 +8,7 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: d88aaff6166ed99296052cb689becacfdbc526ccba096cd3c9e65d8213740472
+    sha256: 61b048d27a3234f1e98a7b482644845f620a0917b0ddca523431cc091571bd37
   - folder: src
     url: https://github.com/horejsek/python-{{ name }}/archive/v{{ version }}.tar.gz
     sha256: d88aaff6166ed99296052cb689becacfdbc526ccba096cd3c9e65d8213740472
