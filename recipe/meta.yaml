@@ -1,5 +1,5 @@
 {% set name = "fastjsonschema" %}
-{% set version = "2.14.2" %}
+{% set version = "2.14.3" %}
 
 package:
   name: python-{{ name }}
@@ -8,15 +8,15 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 61b048d27a3234f1e98a7b482644845f620a0917b0ddca523431cc091571bd37
+    sha256: ba706f65bef0d3a511e514223f47ea0835385022b32cd77efa7b251f0991d93e
   - folder: src
     url: https://github.com/horejsek/python-{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: d88aaff6166ed99296052cb689becacfdbc526ccba096cd3c9e65d8213740472
+    sha256: 1f5f766e04b2b34711dae56b1ff33e741a21f346aab151cfd061edd9c2e2ce6f
 
 build:
   noarch: python
   number: 0
-  script: "cd dist && {{ PYTHON }} -m pip install . -vv"
+  script: cd dist && {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -41,7 +41,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: src/LICENSE
-  summary: 'Fastest Python implementation of JSON schema'
+  summary: Fastest Python implementation of JSON schema
   description: |
     fastjsonschema implements validation of JSON documents by JSON schema. The
     library implements JSON schema drafts 04, 06 and 07. The main purpose is to
