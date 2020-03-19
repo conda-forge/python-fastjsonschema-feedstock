@@ -1,5 +1,5 @@
 {% set name = "fastjsonschema" %}
-{% set version = "2.14.3" %}
+{% set version = "2.14.4" %}
 
 package:
   name: python-{{ name }}
@@ -8,10 +8,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: ba706f65bef0d3a511e514223f47ea0835385022b32cd77efa7b251f0991d93e
+    sha256: 7292cde54f1c30172f78557509ad4cb152f374087fc844bd113a83e2ac494dd6
   - folder: src
     url: https://github.com/horejsek/python-{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: 1f5f766e04b2b34711dae56b1ff33e741a21f346aab151cfd061edd9c2e2ce6f
+    sha256: 96ad5a4ee0476c09323a64c7659cbde8215fc58462a066a341df8d2d9bbfe84f
 
 build:
   noarch: python
