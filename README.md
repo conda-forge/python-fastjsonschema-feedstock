@@ -5,7 +5,7 @@ Home: https://github.com/horejsek/python-fastjsonschema
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Fastest Python implementation of JSON schema
 
