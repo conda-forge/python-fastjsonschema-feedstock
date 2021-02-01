@@ -5,9 +5,11 @@ Home: https://github.com/horejsek/python-fastjsonschema
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-fastjsonschema-feedstock/blob/master/LICENSE.txt)
 
 Summary: Fastest Python implementation of JSON schema
+
+Documentation: https://horejsek.github.io/python-fastjsonschema
 
 fastjsonschema implements validation of JSON documents by JSON schema. The
 library implements JSON schema drafts 04, 06 and 07. The main purpose is to
