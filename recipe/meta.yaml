@@ -34,7 +34,16 @@ test:
   imports:
     - fastjsonschema
   commands:
-    - cd src && cd tests && pytest --cov fastjsonschema -k "not compile_to_code_ipv6_regex"
+    # revisit skips after: https://github.com/horejsek/python-fastjsonschema/pull/134
+    - >-
+      cd src 
+      && cd tests 
+      && python -c "__import__('pathlib').Path('test_array.py').unlink()"
+      && pytest --cov fastjsonschema 
+        -k "not compile_to_code_ipv6_regex" 
+        --cov-report term-missing:skip-covered 
+        --no-cov-on-fail 
+        --cov-fail-under 100
 
 about:
   home: https://github.com/horejsek/python-fastjsonschema
