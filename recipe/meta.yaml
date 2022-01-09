@@ -11,9 +11,6 @@ source:
   - folder: src
     url: https://github.com/horejsek/python-fastjsonschema/archive/v{{ version }}.tar.gz
     sha256: 94e59a36c0efbf75a1a790fed15b51c9876b81204a5184c0c89075c68b10e7ec
-    patches:
-      # revisit skips after: https://github.com/horejsek/python-fastjsonschema/pull/134
-      - 0000-test-array-exception.diff
 
 build:
   noarch: python
