@@ -1,4 +1,4 @@
-{% set version = "2.15.2" %}
+{% set version = "2.15.3" %}
 
 package:
   name: python-fastjsonschema
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/f/fastjsonschema/fastjsonschema-{{ version }}.tar.gz
-    sha256: 2a84755f22eb4c944c83c18d8f40705612376d178d2a5dfe50b0ecca3c11d610
+    sha256: 0a572f0836962d844c1fc435e200b2e4f4677e4e6611a2e3bdd01ba697c275ec
   - folder: src
     url: https://github.com/horejsek/python-fastjsonschema/archive/v{{ version }}.tar.gz
-    sha256: b8403717b7de81889d80134c548ccb44410138cbc3581fc30f01076f44b1c4e1
+    sha256: 94e59a36c0efbf75a1a790fed15b51c9876b81204a5184c0c89075c68b10e7ec
     patches:
       # revisit skips after: https://github.com/horejsek/python-fastjsonschema/pull/134
       - 0000-test-array-exception.diff
