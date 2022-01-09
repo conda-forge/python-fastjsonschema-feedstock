@@ -33,7 +33,7 @@ test:
   imports:
     - fastjsonschema
   commands:
-    - cd src && cd tests && pytest --cov fastjsonschema -k "not compile_to_code_ipv6_regex" --cov-report term-missing:skip-covered --no-cov-on-fail --cov-fail-under 84
+    - cd src && cd tests && pytest -vv --cov fastjsonschema -k "not (compile_to_code_ipv6_regex or compile_to_code_custom_format_with_refs)" --cov-report term-missing:skip-covered --no-cov-on-fail --cov-fail-under 84
 
 about:
   home: https://github.com/horejsek/python-fastjsonschema
