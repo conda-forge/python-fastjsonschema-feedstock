@@ -31,10 +31,10 @@ test:
   source_files:
     - src/tests
   requires:
+    - pip
     - pytest-benchmark
-    - pytest-cov
+    - coverage
     - python {{ python_min }}
-    -pip
   imports:
     - fastjsonschema
   commands:
