@@ -43,8 +43,8 @@ tests:
         - src/tests/
     requirements:
       run:
-        - pytest-benchmark
         - coverage
+        - pytest-benchmark
         - python ${{ python_min }}.*
     script:
       - cd src/tests
