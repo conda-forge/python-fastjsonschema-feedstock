@@ -2,18 +2,19 @@
 schema_version: 1
 
 context:
-  version: "2.22.2"
+  version: "2.22.3"
+  python_check_max: "3.15"
 
 package:
   name: python-fastjsonschema
   version: ${{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/f/fastjsonschema/fastjsonschema-${{ version }}.tar.gz
-    sha256: 72064e12356a7d6ef02165be2946b9abadbdf238536e07eb587e3dbaa33099cf
+  - url: https://files.pythonhosted.org/packages/source/f/fastjsonschema/fastjsonschema-${{ version }}.tar.gz
+    sha256: 8330c91b027dcf941efcb7b1f0998515ff95d177ea15bbabdfe8671965620901
     target_directory: dist
   - url: https://github.com/horejsek/python-fastjsonschema/archive/v${{ version }}.tar.gz
-    sha256: 330cf64bdbf1b4c62eb10ee4a2cc85746f051c7f34065f126771c355b0981176
+    sha256: 36d516687f5c6b55f3e89950d639bf5a81c7816385bcfd692c19f369638ad9f5
     target_directory: src
 
 build:
@@ -21,7 +22,7 @@ build:
   noarch: python
   script:
     - cd dist
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -32,12 +33,19 @@ requirements:
     - python >=${{ python_min }}
 
 tests:
+  - package_contents:
+      strict: true
+      files:
+        - etc/conda/test-files/python-fastjsonschema/**
+      site_packages:
+        - fastjsonschema/**
+        - fastjsonschema-${{ version }}.dist-info/**
   - python:
       imports: fastjsonschema
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - files:
       source:
         - src/tests/
@@ -59,7 +67,8 @@ about:
     fastjsonschema implements validation of JSON documents by JSON schema. The
     library implements JSON schema drafts 04, 06 and 07. The main purpose is to
     have a really fast implementation.
-  homepage: https://github.com/horejsek/python-fastjsonschema
+  homepage: https://pypi.org/project/fastjsonschema
+  repository: https://github.com/horejsek/python-fastjsonschema
   documentation: https://horejsek.github.io/python-fastjsonschema
 
 extra:
