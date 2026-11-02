@@ -3,11 +3,13 @@ About python-fastjsonschema-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-fastjsonschema-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/horejsek/python-fastjsonschema
+Home: https://pypi.org/project/fastjsonschema
 
 Package license: BSD-3-Clause
 
 Summary: Fastest Python implementation of JSON schema
+
+Development: https://github.com/horejsek/python-fastjsonschema
 
 Documentation: https://horejsek.github.io/python-fastjsonschema
 
