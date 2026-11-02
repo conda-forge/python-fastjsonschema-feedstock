@@ -3,13 +3,14 @@ schema_version: 1
 
 context:
   version: "2.22.3"
+  python_check_max: "3.15"
 
 package:
   name: python-fastjsonschema
   version: ${{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/f/fastjsonschema/fastjsonschema-${{ version }}.tar.gz
+  - url: https://files.pythonhosted.org/packages/source/f/fastjsonschema/fastjsonschema-${{ version }}.tar.gz
     sha256: 8330c91b027dcf941efcb7b1f0998515ff95d177ea15bbabdfe8671965620901
     target_directory: dist
   - url: https://github.com/horejsek/python-fastjsonschema/archive/v${{ version }}.tar.gz
@@ -21,7 +22,7 @@ build:
   noarch: python
   script:
     - cd dist
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -32,12 +33,19 @@ requirements:
     - python >=${{ python_min }}
 
 tests:
+  - package_contents:
+      strict: true
+      files:
+        - etc/conda/test-files/python-fastjsonschema/**
+      site_packages:
+        - fastjsonschema/**
+        - fastjsonschema-${{ version }}.dist-info/**
   - python:
       imports: fastjsonschema
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - files:
       source:
         - src/tests/
@@ -59,7 +67,8 @@ about:
     fastjsonschema implements validation of JSON documents by JSON schema. The
     library implements JSON schema drafts 04, 06 and 07. The main purpose is to
     have a really fast implementation.
-  homepage: https://github.com/horejsek/python-fastjsonschema
+  homepage: https://pypi.org/project/fastjsonschema
+  repository: https://github.com/horejsek/python-fastjsonschema
   documentation: https://horejsek.github.io/python-fastjsonschema
 
 extra:
