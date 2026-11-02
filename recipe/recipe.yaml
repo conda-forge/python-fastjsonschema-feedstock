@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.22.2"
+  version: "2.22.3"
 
 package:
   name: python-fastjsonschema
@@ -10,10 +10,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/f/fastjsonschema/fastjsonschema-${{ version }}.tar.gz
-    sha256: 72064e12356a7d6ef02165be2946b9abadbdf238536e07eb587e3dbaa33099cf
+    sha256: 8330c91b027dcf941efcb7b1f0998515ff95d177ea15bbabdfe8671965620901
     target_directory: dist
   - url: https://github.com/horejsek/python-fastjsonschema/archive/v${{ version }}.tar.gz
-    sha256: 330cf64bdbf1b4c62eb10ee4a2cc85746f051c7f34065f126771c355b0981176
+    sha256: 36d516687f5c6b55f3e89950d639bf5a81c7816385bcfd692c19f369638ad9f5
     target_directory: src
 
 build:
